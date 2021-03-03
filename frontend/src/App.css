@@ -1,11 +1,25 @@
 .gridContainer {
-  height: 1000px;
-  width: 1000px;
-  display: inline-grid;
+  display: grid;
   grid-template-columns: repeat(1000, 1fr);
-  grid-template-rows: aut;
+  text-align: center;
+  margin-left: 2.75%;
 }
 
 .cell {
-  color: white;
+  width: 10px;
+  height: 10px;
+  border: #0000ff 0.25px solid;
+  margin: 0;
+  padding:0;
+}
+
+.homePage {
+    margin-bottom: 2.75%;
+    background-color: white;
+}
+
+.pageHeader {
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
