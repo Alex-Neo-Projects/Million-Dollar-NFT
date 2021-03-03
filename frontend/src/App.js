@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Row from './components/Row'
 
 function App() {
-  return (
+  const rows = [];
+  for (var i = 0; i < 100; i++) {
+    rows.push(<Row></Row>);
+  }
+
+  return (  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="pageHeader"> The Million Dollar NFT </h1>
+      <br></br>
+      <div className="homePage">       
+        {rows}
+      </div>
     </div>
   );
 }
