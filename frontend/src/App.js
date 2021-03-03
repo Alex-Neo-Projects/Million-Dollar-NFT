@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      
+      <div className="header-collection">
+        <div className="header-logo">
+          <h1> The Million Dollar <strike>Homepage</strike> NFT </h1>
+        </div>
+        <div className="header-info"> 
+            <p>1,000,000 pixels | $x per pixel | Own a piecec of NFT history!</p>
+        </div>
+      </div>
+
+      <div className="nav-links">
+        <h1> Links </h1>
+      </div>
+
+      <div className="ad">
+        <h1>ad space</h1>
+      </div>
+
     </div>
   );
 }
