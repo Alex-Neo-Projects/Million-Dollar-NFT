@@ -21,12 +21,13 @@ function App() {
       </div>
 
       <div className="nav-links">
-        <h1> Links </h1>
+        <p>Click on an open spot to buy. Redeem your NFT to put your ad/image on it!</p>
       </div>
 
       <div className="ad">
-        <p>Click on an open spot to buy. Redeem your NFT to put your ad/image on it!</p>
+        <div className="ad-collection">
           <h1>{rows}</h1>
+        </div>
       </div>
 
     </div>

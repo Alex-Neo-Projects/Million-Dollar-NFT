@@ -3,8 +3,7 @@
 .container {
   margin: 0 auto;
   width: 1300px;
-  height: 1400px;
-  /* padding: 30px; */
+  height: auto;
   border: 3px solid blue;
 }
 
@@ -37,30 +36,37 @@
 /* Nav Links Container */
 .nav-links{ 
   margin: 0 auto;
-  width: 400px;
+  width: 500px;
   height: 50px;
   border: 3px solid green;
 }
 
 /* Ad Space Container */
 .ad{
-  /* margin: 0px auto; */
-  width: auto;
-  height: 1250px;
-  border: 3px solid green;
+  width: 1250px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  border: 3px solid orange;
+}
+
+.ad-collection{
+  margin: 0 auto;
+  display: inline-flex;
 }
 
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(1000, 1fr);
+  display: inline-table;
 }
 
 .cell {
   width: 10px;
   height: 10px;
-  border: #0000ff 0.25px solid;
   margin: 0;
   padding:0;
+  border: #0000ff 0.25px solid;
 }
 
 /* Fonts */
