@@ -1,5 +1,6 @@
 import React from 'react';
-import Square from './Square'
+import Square from './Square';
+import img from './../img.png';
 
 function Row(rowNum) {
     const rowSquares = [];
@@ -11,7 +12,7 @@ function Row(rowNum) {
     }
 
     for (var i = 0; i < 100; i++) {
-        rowSquares.push(<Square link={openseaLinks[i]}></Square>);
+        rowSquares.push(<Square link={openseaLinks[i]} imgLink={img}></Square>);
     }
 
     return (
