@@ -1,8 +1,7 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(1000, 1fr);
-  text-align: center;
-  margin-left: 2.75%;
+  margin-left: 11.5%;
 }
 
 .cell {
