@@ -1,6 +1,10 @@
-function Square() {
+function Square(link) {
   return (
-    <div className="cell"></div>
+  <a href={link.link} target='_blank'>
+    <div className="cell">
+      
+    </div>
+  </a>
   );
 }
 

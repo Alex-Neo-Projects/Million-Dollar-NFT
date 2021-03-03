@@ -2,8 +2,9 @@ import Row from './components/Row'
 
 function App() {
   const rows = [];
+  
   for (var i = 0; i < 100; i++) {
-    rows.push(<Row></Row>);
+    rows.push(<Row rowNum={i}></Row>);
   }
 
   return (  
