@@ -10,6 +10,7 @@ function App() {
   return (  
     <div className="App">
       <h1 className="pageHeader"> The Million Dollar NFT </h1>
+      <p className="pageHeader">Click on an open spot to buy. Redeem your NFT to put your ad/image on it!</p>
       <br></br>
       <div className="homePage">       
         {rows}
