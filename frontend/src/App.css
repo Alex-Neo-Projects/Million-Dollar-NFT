@@ -1,0 +1,11 @@
+.gridContainer {
+  height: 1000px;
+  width: 1000px;
+  display: inline-grid;
+  grid-template-columns: repeat(1000, 1fr);
+  grid-template-rows: aut;
+}
+
+.cell {
+  color: white;
+}
