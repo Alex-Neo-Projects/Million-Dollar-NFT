@@ -1,6 +1,13 @@
 import './App.css';
+import Row from './components/Row';
 
 function App() {
+  const rows = [];
+  
+  for (var i = 0; i < 100; i++) {
+    rows.push(<Row rowNum={i}></Row>);
+  }
+
   return (
     <div className="container">
       
@@ -9,7 +16,7 @@ function App() {
           <h1> The Million Dollar <strike>Homepage</strike> NFT </h1>
         </div>
         <div className="header-info"> 
-            <p>1,000,000 pixels | $x per pixel | Own a piecec of NFT history!</p>
+            <p>1,000,000 pixels | $x per pixel | Own a piece of NFT history!</p>
         </div>
       </div>
 
@@ -18,7 +25,8 @@ function App() {
       </div>
 
       <div className="ad">
-        <h1>ad space</h1>
+        <p>Click on an open spot to buy. Redeem your NFT to put your ad/image on it!</p>
+          <h1>{rows}</h1>
       </div>
 
     </div>

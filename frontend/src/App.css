@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
 
 .container {
-  padding: 30px;
   margin: 0 auto;
-  width: 900px;
-  border: 3px solid plum;
+  width: 1300px;
+  height: 1400px;
+  /* padding: 30px; */
+  border: 3px solid blue;
 }
 
 /* Header Container */
-.header-collection{
+.header-collection {
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
   height: 60px;
   width: 900px;  
   border: 3px solid blue;
@@ -24,7 +26,6 @@
 .header-logo {
   height: 60px;
   width: 400px;  
-  border: 1px solid red;
 }
 
 .header-info{
@@ -34,8 +35,8 @@
 }
 
 /* Nav Links Container */
-.nav-links{
-  margin: 10px;
+.nav-links{ 
+  margin: 0 auto;
   width: 400px;
   height: 50px;
   border: 3px solid green;
@@ -43,10 +44,23 @@
 
 /* Ad Space Container */
 .ad{
-  margin: 0px auto;
-  width: 800px;
-  height: 700px;
+  /* margin: 0px auto; */
+  width: auto;
+  height: 1250px;
   border: 3px solid green;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(1000, 1fr);
+}
+
+.cell {
+  width: 10px;
+  height: 10px;
+  border: #0000ff 0.25px solid;
+  margin: 0;
+  padding:0;
 }
 
 /* Fonts */
