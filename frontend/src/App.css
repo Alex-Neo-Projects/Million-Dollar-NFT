@@ -1,7 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+
+.container {
+  margin: 0 auto;
+  width: 1300px;
+  height: 1400px;
+  /* padding: 30px; */
+  border: 3px solid blue;
+}
+
+/* Header Container */
+.header-collection {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  height: 60px;
+  width: 900px;  
+  border: 3px solid blue;
+}
+
+.header-collection > div
+{
+    flex: 1 1 auto;
+}
+
+.header-logo {
+  height: 60px;
+  width: 400px;  
+}
+
+.header-info{
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 10px;
+}
+
+/* Nav Links Container */
+.nav-links{ 
+  margin: 0 auto;
+  width: 400px;
+  height: 50px;
+  border: 3px solid green;
+}
+
+/* Ad Space Container */
+.ad{
+  /* margin: 0px auto; */
+  width: auto;
+  height: 1250px;
+  border: 3px solid green;
+}
+
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(1000, 1fr);
-  margin-left: 11.5%;
 }
 
 .cell {
@@ -12,13 +63,11 @@
   padding:0;
 }
 
-.homePage {
-    margin-bottom: 2.75%;
-    background-color: white;
+/* Fonts */
+
+h1 {
+  font-size: 25px;
+  color: #323232;
+  word-break: break-word;
 }
 
-.pageHeader {
-    text-align: center;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}

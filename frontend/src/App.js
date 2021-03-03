@@ -1,3 +1,4 @@
+import './App.css';
 import Row from './components/Row';
 
 function App() {
@@ -7,14 +8,27 @@ function App() {
     rows.push(<Row rowNum={i}></Row>);
   }
 
-  return (  
-    <div className="App">
-      <h1 className="pageHeader"> The Million Dollar NFT </h1>
-      <p className="pageHeader">Click on an open spot to buy. Redeem your NFT to put your ad/image on it!</p>
-      <br></br>
-      <div className="homePage">       
-        {rows}
+  return (
+    <div className="container">
+      
+      <div className="header-collection">
+        <div className="header-logo">
+          <h1> The Million Dollar <strike>Homepage</strike> NFT </h1>
+        </div>
+        <div className="header-info"> 
+            <p>1,000,000 pixels | $x per pixel | Own a piece of NFT history!</p>
+        </div>
       </div>
+
+      <div className="nav-links">
+        <h1> Links </h1>
+      </div>
+
+      <div className="ad">
+        <p>Click on an open spot to buy. Redeem your NFT to put your ad/image on it!</p>
+          <h1>{rows}</h1>
+      </div>
+
     </div>
   );
 }
