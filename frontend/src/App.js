@@ -1,31 +1,27 @@
 import './App.css';
-import Canvas from './components/Canvas';
+import Home from './components/Home';
+import Redeem from './components/Redeem';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
+    <Router>
     <div>
-     <div className="container">
-      
-       <div className="header-collection">
-         <div className="header-logo">
-           <h1> The Million Dollar <strike>Homepage</strike> NFT </h1>
-         </div>
-         <div className="header-info"> 
-             <p>1,000,000 pixels | Starting at $1 per pixel | Own a piece of NFT history!</p>
-         </div>
-      </div>
-
-       <div className="nav-links">
-         <p>Click on an open spot to buy. Redeem your NFT to put your ad/image on it!</p>
-       </div> 
-
-     <div className="ad">
-        <div className="ad-collection">
-          <Canvas />
-        </div>
-      </div>
-      </div>
+      <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/redeem">
+            <Redeem />
+          </Route>
+        </Switch>
     </div>
+    </Router>
   );
 }
 
