@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+
+/* Left Container */
+.redeem-container {
+    margin: 0 auto;
+    width: 1300px;
+    display: flex;
+    border: 3px solid red;
+  }
+
+.redeem-child {
+    flex: 1;
+    border: 3px solid blueviolet;
+    height: 700px;
+}  
+
+.redeem-header{
+    margin: 0px 0px 0px 10px;
+}
+
+.redeem-button{
+    border: 3px solid blueviolet;
+    width: 80px;
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+.insert{
+    margin: 0px 10px 0px 10px;
+    /* border: 3px solid peru; */
+}
+
+.media-drop{
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}
+
+/* Right Container */
+.preview{
+    margin: 15px 10px 0px 10px;
+    /* border: 3px solid peru; */
+}
+
+.preview-header{
+    margin: 0px 0px 0px 10px;
+}
+
+/* Fonts */
+h1 {
+    font-size: 25px;
+    color: #323232;
+    word-break: break-word;
+  }
+  

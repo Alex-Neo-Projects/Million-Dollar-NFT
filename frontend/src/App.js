@@ -20,7 +20,8 @@ function App() {
         </div>
       </div>
 
-      <div className="nav-links">
+     {/* Navigation */}
+     <div className="nav-links">
         <p>Click on an open spot to buy. Redeem your NFT to put your ad/image on it!</p>
       </div>
 
