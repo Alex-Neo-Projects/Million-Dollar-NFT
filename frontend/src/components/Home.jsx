@@ -1,9 +1,8 @@
 import Canvas from './Canvas';
 import { Link } from 'react-router-dom';
-import logo from './images/header6.png';
-import info from './images/info.png';
-import redeem from './images/redeem.png'
-import Row from './components/Row';
+import logo from '../images/header7.png';
+import info from '../images/info.png';
+import redeem from '../images/redeem.png';
 
 function Home() {
 
@@ -15,19 +14,20 @@ function Home() {
         </div>
       </div>
 
-     {/* Navigation */}
-     <div className="nav-links">
+     <div className="nav-collection">
        <div className="nav-item">
         <img src={info} width="300" />
        </div>
        <div className="nav-item">
-        <img src={redeem} width="120" />
+        <Link to="/redeem"> 
+          <img src={redeem} width="120" /> 
+        </Link>
        </div>
       </div>
 
       <div className="ad">
         <div className="ad-collection">
-          <h1>{rows}</h1>
+          <Canvas />
         </div>
       </div>
     </div>
