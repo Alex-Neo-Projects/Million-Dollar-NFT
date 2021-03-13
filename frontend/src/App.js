@@ -1,42 +1,27 @@
 import './App.css';
-import logo from './images/header6.png';
-import info from './images/info.png';
-import redeem from './images/redeem.png'
-import Row from './components/Row';
+import Home from './components/Home';
+import Redeem from './components/Redeem';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
-  const rows = [];
-  
-  for (var i = 0; i < 100; i++) {
-    rows.push(<Row rowNum={i}></Row>);
-  }
-
   return (
-    <div className="container">
-      
-      <div className="header-collection">
-        <div className="header-logo">
-          <img src={logo} width="1000" />
-        </div>
-      </div>
-
-     {/* Navigation */}
-     <div className="nav-links">
-       <div className="nav-item">
-        <img src={info} width="300" />
-       </div>
-       <div className="nav-item">
-        <img src={redeem} width="120" />
-       </div>
-      </div>
-
-      <div className="ad">
-        <div className="ad-collection">
-          <h1>{rows}</h1>
-        </div>
-      </div>
-
+    <Router>
+    <div>
+      <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/redeem">
+            <Redeem />
+          </Route>
+        </Switch>
     </div>
+    </Router>
   );
 }
 
