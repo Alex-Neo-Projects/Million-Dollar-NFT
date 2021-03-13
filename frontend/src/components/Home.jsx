@@ -1,21 +1,29 @@
 import Canvas from './Canvas';
 import { Link } from 'react-router-dom';
+import logo from '../images/header7.png';
+import info from '../images/info.png';
+import redeem from '../images/redeem.png';
+
 function Home() {
 
   return( 
     <div className="container">
       <div className="header-collection">
         <div className="header-logo">
-          <h1> The Million Dollar <strike>Homepage</strike> NFT </h1>
-        </div>
-        <div className="header-info"> 
-            <p>1,000,000 pixels | Starting at $1 per pixel | Own a piece of NFT history!</p>
+          <img src={logo} width="1000" />
         </div>
       </div>
 
-      <div className="nav-links">
-        <p>Click on an open spot to buy. <Link to="/redeem">Redeem your NFT to put your image on!</Link></p>
-      </div> 
+     <div className="nav-collection">
+       <div className="nav-item">
+        <img src={info} width="300" />
+       </div>
+       <div className="nav-item">
+        <Link to="/redeem"> 
+          <img src={redeem} width="120" /> 
+        </Link>
+       </div>
+      </div>
 
       <div className="ad">
         <div className="ad-collection">
