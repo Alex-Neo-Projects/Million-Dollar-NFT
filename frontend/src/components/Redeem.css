@@ -18,28 +18,32 @@
     margin: 0px 0px 0px 10px;
 }
 
+.insert{
+    margin: 0px 10px 0px 10px;
+    border: 3px solid peru;
+}
+
+.dropzone-container{}
+
+.insert-textfield{
+    margin: 15px 0px 0px 0px;
+}
+
 .redeem-button{
-    border: 3px solid blueviolet;
     width: 80px;
+    margin-top: 10px;
     margin-left: auto; 
     margin-right: 0;
 }
 
-.insert{
-    margin: 0px 10px 0px 10px;
-    /* border: 3px solid peru; */
-}
-
-.media-drop{
-    width: 100px;
-    height: 100px;
-    background-color: grey;
-}
-
 /* Right Container */
 .preview{
+    display: block;
     margin: 15px 10px 0px 10px;
-    /* border: 3px solid peru; */
+}
+
+.preview-content{
+    clear:both;
 }
 
 .preview-header{
@@ -51,5 +55,5 @@ h1 {
     font-size: 25px;
     color: #323232;
     word-break: break-word;
-  }
+}
   

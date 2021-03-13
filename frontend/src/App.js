@@ -1,4 +1,7 @@
 import './App.css';
+import logo from './images/header6.png';
+import info from './images/info.png';
+import redeem from './images/redeem.png'
 import Row from './components/Row';
 
 function App() {
@@ -13,16 +16,18 @@ function App() {
       
       <div className="header-collection">
         <div className="header-logo">
-          <h1> The Million Dollar <strike>Homepage</strike> NFT </h1>
-        </div>
-        <div className="header-info"> 
-            <p>1,000,000 pixels | $x per pixel | Own a piece of NFT history!</p>
+          <img src={logo} width="1000" />
         </div>
       </div>
 
      {/* Navigation */}
      <div className="nav-links">
-        <p>Click on an open spot to buy. Redeem your NFT to put your ad/image on it!</p>
+       <div className="nav-item">
+        <img src={info} width="300" />
+       </div>
+       <div className="nav-item">
+        <img src={redeem} width="120" />
+       </div>
       </div>
 
       <div className="ad">
