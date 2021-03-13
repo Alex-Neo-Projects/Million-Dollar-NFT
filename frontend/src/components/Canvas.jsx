@@ -3,26 +3,7 @@ import '../App.css';
 
 function Canvas() {  
   const canvasRef = useRef(null)
-  var mouseX = 0; 
-  var mouseY = 0; 
 
-  // Helper function to get exact position for the mouse
-  function getPosition(el) {
-    var xPosition = 0;
-    var yPosition = 0;
-   
-    while (el) {
-      xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-      yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
-      el = el.offsetParent;
-    }
-    return {
-      x: xPosition,
-      y: yPosition
-    };
-  }       
-
-  
   const drawBoard = context => {
     console.log('drawboard called');
     for (var i = 0; i < 100; i++) {
@@ -38,27 +19,10 @@ function Canvas() {
     context.strokeStyle = "black";
     context.stroke();
   }
-
-  function update (context) {
-    context.clearRect(0, 0, 1000, 1000);
-
-    context.beginPath();
-    context.arc(mouseX, mouseY, 50, 0, 2 * Math.PI, true);
-    context.fillStyle = "#FF6A6A";
-    context.font = "20px Georgia";
-
-    context.fill();
-
-    requestAnimationFrame(function(){
-      update(context);
-    });
-    // requestAnimationFrame(update(context));
-  }
-
+  
   useEffect(() => {
     const canvas = canvasRef.current
     const context = canvas.getContext('2d')
-    var canvasPos = getPosition(canvas);
   
     // Fix to make lines *not* blurry
     context.translate(0.5, 0.5);
@@ -70,8 +34,7 @@ function Canvas() {
 
     var background = new Image(); 
     background.src = 'https://raw.githubusercontent.com/BinaryMoon/MillionDollarHomepage/master/assets/image-map.png'; 
-    update(context);
-
+    
     canvas.addEventListener('mousedown', function(e) {
       /* 
         Explanation: 
@@ -99,22 +62,18 @@ function Canvas() {
         yBlock = parseInt(e.offsetY.toString().substr(0,2));
       }
       
+      // alert("X: " + xBlock + " Y: " + yBlock + "X coord: " + e.offsetX + " Y coord: " + e.offsetY);
+      // context.drawImage(img, (xBlock*10), (yBlock*10))
       // Need to get block position on grid
       var blockPosition = (yBlock*100) + xBlock; 
 
-      // context.drawImage(background, 0, 0); 
+      context.drawImage(background, 0, 0); 
       // context.drawImage(img, (xBlock*10), yBlock*10);
-      // drawBoard(context);
+      drawBoard(context);
       // var url = 'https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/' + blockPosition;
       // window.open(url, '_blank');
     })
-    
-    canvas.addEventListener("mousemove", function(e) {
-      mouseX = e.clientX - canvasPos.x;
-      mouseY = e.clientY - canvasPos.y; 
-
-    });
-
+  
     drawBoard(context)
   }, [drawBoard])
   
