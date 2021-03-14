@@ -1,8 +1,8 @@
 import Canvas from './Canvas';
 import { Link } from 'react-router-dom';
-import logo from '../images/header8.png';
-import info from '../images/info.png';
-import redeem from '../images/redeem.png';
+import logo from '../images/homepage/header8.png';
+import info from '../images/homepage/info.png';
+import redeem from '../images/homepage/redeem.png';
 
 function Home() {
 
