@@ -11,19 +11,18 @@ function Home() {
       <div className="header-collection">
         <div className="header-logo">
           <a href="/">
-            <img src={logo} width="1000" />
+            <img src={logo} width="1000" alt="" />
           </a>
-
         </div>
       </div>
 
      <div className="nav-collection">
        <div className="nav-item">
-        <img src={info} width="300" />
+        <img src={info} width="300" alt="" />
        </div>
        <div className="nav-item">
         <Link to="/redeem"> 
-          <img src={redeem} width="120" /> 
+          <img src={redeem} width="120" alt="" /> 
         </Link>
        </div>
       </div>
