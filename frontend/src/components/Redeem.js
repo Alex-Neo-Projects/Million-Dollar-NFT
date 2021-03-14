@@ -1,15 +1,22 @@
-import {Card, CardContent} from '@material-ui/core';
+import {Card, CardContent, makeStyles, Typography} from '@material-ui/core';
 import {Button} from '@material-ui/core';
 import {TextField} from '@material-ui/core';
-import {useState, useEffect, useCallback} from 'react';
+import {useState, useEffect} from 'react';
 import {useDropzone} from 'react-dropzone';
 import styled from 'styled-components';
+import redeemheader from '../images/redeempage/reedemspace.png';
+import previewheader from '../images/redeempage/preview.png';
+import uploadheader from '../images/redeempage/upload.png';
+import imageheader from '../images/redeempage/image.png';
+import titleheader from '../images/redeempage/title.png';
+import linkheader from '../images/redeempage/link.png';
+import descriptionheader from '../images/redeempage/description.png';
 import '../components/Redeem.css';
 
-// Styling
+// Dropzone Styling
 const getColor = (props) => {
     if (props.isDragAccept) {
-        return '#00e676';
+        return '#7fcd85';
     }
     if (props.isDragReject) {
         return '#ff1744';
@@ -29,8 +36,11 @@ const Container = styled.div`
     border-width: 2px;
     border-radius: 2px;
     border-color: ${props => getColor(props)};
-    border-style: dashed;
+    border-style: solid;
     background-color: #fafafa;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
     color: #bdbdbd;
     outline: none;
     transition: border .24s ease-in-out;
@@ -39,7 +49,7 @@ const Container = styled.div`
 const thumb = {
     display: 'inline-flex',
     borderRadius: 2,
-    border: '1px solid #eaeaea',
+    // border: '1px solid #eaeaea',
     marginBottom: 8,
     marginRight: 8,
     width: 200,
@@ -60,11 +70,22 @@ const img = {
     height: '100%'
 };
 
+// Card Styling
+const useStyles = makeStyles({
+    card: {
+     borderRadius: 10,
+    }, 
+    textField: {
+    }
+});
+
 function Redeem(){
     const [title, setTitle] = useState('');
     const [link, setLink] = useState('');
     const [description, setDescription] = useState('');
     const [files, setFiles] = useState([]);
+
+    const classes = useStyles();
 
     // Dropzone
     // accept all img type: use image/*
@@ -83,10 +104,7 @@ function Redeem(){
     const previewThumbnail = files.map(file => (
         <div style={thumb} key={file.name}>
         <div style={thumbInner}>
-          <img
-            src={file.preview}
-            style={img}
-          />
+          <img src={file.preview} style={img} alt="" />
         </div>
       </div>
     ));
@@ -126,14 +144,15 @@ function Redeem(){
         <div className="redeem-container"> 
             <div className="redeem-child">
                 <div className="redeem-header">
-                    <h1> Reedem your space </h1>
+                    <img src={redeemheader} width="400" alt="" />
                 </div>
 
-                <div className="insert"> 
-                    <Card> 
+                <div className="insert">
+                    <Card className={classes.card}> 
+                        <div className="insert-header">
+                            <img src={uploadheader} width="200" alt="" />
+                        </div>
                         <CardContent>
-                            <h2> Upload Media </h2>
-
                             <form onSubmit={handleSubmits}>
 
                                 <div className="dropzone-container">
@@ -146,47 +165,57 @@ function Redeem(){
                                             }
                                     </Container> 
                                 </div>
+
+                                <div className="insert-link">
+                                    <img src={titleheader} width="85" alt="" />
+                                </div>
                                 
                                 <div className="insert-textfield">
-                                    <TextField 
+                                    <Typography variant="fields">
+                                        <TextField 
                                         id="title" 
-                                        label="Title"
+                                        // label="Title"
                                         fullWidth
-                                        variant="filled" 
-                                        InputLabelProps={{
-                                            shrink: true,
-                                        }}
-                                        inputProps={{maxLength:90}}
+                                        variant="outlined"
+                                        InputLabelProps={{shrink: true}}
+                                        inputProps={{style: {fontFamily: "Montserrat, sans-serif", fontWeight: "700", color: "#636363"}, maxLength:67}}
                                         value={title} 
                                         onInput={e=>setTitle(e.target.value)} 
                                         onChange={handleTitleChanges}
                                     />
+                                    </Typography>
+                                </div>
+
+                                <div className="insert-link">
+                                    <img src={linkheader} width="85" alt="" />
                                 </div>
 
                                 <div className="insert-textfield">
                                     <TextField 
                                         id="link" 
-                                        label="Link"
+                                        // label="Link"
                                         fullWidth 
-                                        variant="filled" 
-                                        InputLabelProps={{
-                                            shrink: true,
-                                        }}
+                                        variant="outlined" 
+                                        InputLabelProps={{shrink: true}}
+                                        inputProps={{style: {fontFamily: "Montserrat, sans-serif", fontWeight: "700", color: "#636363"}, maxLength:67}}
                                         value={link} 
                                         onInput={e=>setLink(e.target.value)} 
                                         onChange={handleLinkChanges}
                                     />
                                 </div>
 
+                                <div className="insert-link">
+                                    <img src={descriptionheader} width="170" alt="" />
+                                </div>
+
                                 <div className="insert-textfield">
                                     <TextField 
                                         id="description"
-                                        label="Description" 
+                                        // label="Description" 
                                         fullWidth 
-                                        variant="filled"
-                                        InputLabelProps={{
-                                            shrink: true,
-                                        }}
+                                        variant="outlined"
+                                        InputLabelProps={{shrink: true}}
+                                        inputProps={{style: {fontFamily: "Montserrat, sans-serif", fontWeight: "700", color: "#636363"}, maxLength:67}}
                                         value={description} 
                                         onInput={e=>setDescription(e.target.value)} 
                                         onChange={handleDescriptionChanges}
@@ -204,18 +233,33 @@ function Redeem(){
 
             <div className="redeem-child"> 
                 <div className="preview-header">
-                    <h1> Preview </h1>
+                    <img src={previewheader} width="200" alt="" />
                 </div>
                 <div className="preview">
-                    <Card>
+                    <Card className={classes.card}> 
                         <CardContent>
-                            <h3> Image </h3>
-                            <div className="preview-content"> {previewThumbnail} </div>
-                            <h3> Title </h3>
-                            <div className="preview-content"> {title}</div>
-                            <h3> Link </h3>
+                            <div className="preview-image">
+                                <img src={imageheader} width="100" alt="" />
+                            </div>
+
+                            <div className="preview-thumbnail"> {previewThumbnail} </div>
+
+                            <div className="preview-title">
+                                <img src={titleheader} width="100" alt="" />
+                            </div>
+
+                            <div className="preview-content"> {title} </div>
+
+                            <div className="preview-link">
+                                <img src={linkheader} width="100" alt="" />
+                            </div>
+
                             <div className="preview-content"> {link}</div>
-                            <h3> Description </h3>
+
+                            <div className="preview-description">
+                                <img src={descriptionheader} width="200" alt="" />
+                            </div>
+
                             <div className="preview-content"> {description}</div>
                         </CardContent>
                     </Card>

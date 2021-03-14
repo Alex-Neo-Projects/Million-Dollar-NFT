@@ -1,32 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
-/* Left Container */
 .redeem-container {
     margin: 0 auto;
     width: 1300px;
     display: flex;
-    border: 3px solid red;
+    /* border: 3px solid red; */
   }
 
 .redeem-child {
     flex: 1;
-    border: 3px solid blueviolet;
     height: 700px;
+    /* border: 3px solid blueviolet; */
 }  
 
 .redeem-header{
-    margin: 0px 0px 0px 10px;
+    margin: 40px 0px 20px 10px;
 }
 
+/* Left Container */
 .insert{
     margin: 0px 10px 0px 10px;
-    border: 3px solid peru;
+    /* border: 3px solid peru; */
 }
 
-.dropzone-container{}
+.insert-header{
+    /* border: 3px solid peru; */
+    width: 200px;
+    margin: 20px 0px 0px 15px;
+}
+
+.dropzone-container{
+    /* border: 3px solid peru; */
+}
 
 .insert-textfield{
-    margin: 15px 0px 0px 0px;
+    margin: 7px 0px 0px 0px;
+}
+
+.insert-image{
+    margin-bottom: 10px;
+}
+
+.insert-title{
+    margin-top: 30px;
+}
+
+.insert-link{
+    margin-top: 30px;
+}
+
+.insert-description{
+    margin-top: 30px;
 }
 
 .redeem-button{
@@ -39,15 +63,59 @@
 /* Right Container */
 .preview{
     display: block;
-    margin: 15px 10px 0px 10px;
-}
+    margin: 0px 10px 0px 10px;
 
-.preview-content{
-    clear:both;
 }
 
 .preview-header{
-    margin: 0px 0px 0px 10px;
+    margin: 40px 0px 18px 10px;
+}
+
+.preview-content{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #636363;
+    word-break: break-word;
+    height: 20px;
+    width: auto;
+    /* margin-top: 8px; */
+    padding: 10px;
+    border: 1px solid #7fcd85;
+    border-radius: 10px;
+	box-shadow:  -1px 1px #7fcd85,
+		 -2px 2px #7fcd85,
+		 -3px 3px #7fcd85,
+		 -4px 4px #7fcd85,
+		 -5px 5px #7fcd85;
+}
+
+.preview-thumbnail {
+    height: 200px;
+    width: 200px;
+    border: 1px solid #7fcd85;
+	box-shadow:  -1px 1px #7fcd85,
+		 -2px 2px #7fcd85,
+		 -3px 3px #7fcd85,
+		 -4px 4px #7fcd85,
+		 -5px 5px #7fcd85;
+    padding: 10px;
+
+}
+
+.preview-image{
+    margin-bottom: 10px;
+}
+
+.preview-title{
+    margin-top: 30px;
+}
+
+.preview-link{
+    margin-top: 30px;
+}
+
+.preview-description{
+    margin-top: 30px;
 }
 
 /* Fonts */
@@ -56,4 +124,3 @@ h1 {
     color: #323232;
     word-break: break-word;
 }
-  

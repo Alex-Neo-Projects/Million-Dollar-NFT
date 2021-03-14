@@ -1,8 +1,8 @@
 import Canvas from './Canvas';
 import { Link } from 'react-router-dom';
-import logo from '../images/header7.png';
-import info from '../images/info.png';
-import redeem from '../images/redeem.png';
+import logo from '../images/homepage/header7.png';
+import info from '../images/homepage/info.png';
+import redeem from '../images/homepage/redeem.png';
 
 function Home() {
 
@@ -10,17 +10,17 @@ function Home() {
     <div className="container">
       <div className="header-collection">
         <div className="header-logo">
-          <img src={logo} width="1000" />
+          <img src={logo} width="1000" alt="" />
         </div>
       </div>
 
      <div className="nav-collection">
        <div className="nav-item">
-        <img src={info} width="300" />
+        <img src={info} width="300" alt="" />
        </div>
        <div className="nav-item">
         <Link to="/redeem"> 
-          <img src={redeem} width="120" /> 
+          <img src={redeem} width="120" alt="" /> 
         </Link>
        </div>
       </div>
