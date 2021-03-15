@@ -1,7 +1,7 @@
 pragma solidity >=0.6.0 <0.8.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract NFT_Contract is ERC721 {
+contract MDNFT is ERC721 {
   uint256 public tokenCounter; 
 
   constructor() public ERC721("MillionDollarNFT", "MDNFT") {
