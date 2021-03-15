@@ -26,10 +26,27 @@ async function deploy() {
   console.log("Account address: ", accounts[0].address);
   console.log("MDNFT deployed to:", mdnft.address);
 
-  var newCollectible = mdnft.createCollectible("Test!");
+  var newCollectible = await mdnft.createCollectible("Test!");
+  var newCollectible = await mdnft.createCollectible("Test 2!");
+  var newCollectible = await mdnft.createCollectible("Test 3!");
   
+  var theOwner = await mdnft.ownerOf(0);
+  console.log("Owner of the first NFT: ", theOwner); 
+
+  var balance = await mdnft.balanceOf(accounts[0].address);
+  console.log("Owner's balance: ", balance.toString()); 
+
+  var tokenUri = await mdnft.tokenURI(0); 
+  console.log("Token URI of the first NFT: ", tokenUri);
+
+  var burn = await mdnft.burnCollectible(0); 
+  console.log("Burning 0! ");
+
+  var balance = await mdnft.balanceOf(accounts[0].address);
+  console.log("Owner's new balance: ", balance.toString()); 
+
   var tokenCounter = await mdnft.tokenCounter(); 
-  console.log(tokenCounter.toString());
+  console.log("NFTs minted counter: ", tokenCounter.toString());
 
 }
 
