@@ -4,41 +4,37 @@
   margin: 0 auto;
   width: 1300px;
   height: auto;
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 }
 
 /* Header Container */
 .header-collection {
   display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  height: 60px;
-  width: 900px;  
-  border: 3px solid blue;
-}
-
-.header-collection > div
-{
-    flex: 1 1 auto;
+  /* margin: 20px auto 0px auto; */
+  height: 130px;
+  width: auto;  
+  /* border: 3px solid red; */
 }
 
 .header-logo {
-  height: 60px;
-  width: 400px;  
-}
-
-.header-info{
-  font-size: 14px;
-  font-weight: 400;
-  padding: 10px 10px;
+  display: inline-block;
+  margin: 0 auto;
+  height: 130px;
+  width: auto;  
 }
 
 /* Nav Links Container */
-.nav-links{ 
-  margin: 0 auto;
-  width: 500px;
-  height: 50px;
-  border: 3px solid green;
+.nav-collection{ 
+  margin: 10px auto 10px 150px;
+  width: 490px;
+  height: auto;
+}
+
+.nav-item{
+  /* display: inline-block; */
+  margin-top: 7px;
+  margin-right: 20px;
+  /* border: 3px solid red; */
 }
 
 /* Ad Space Container */
@@ -47,7 +43,7 @@
   height: auto;
   margin: 0 auto;
   display: flex;
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
 }
 
 .ad-collection{
