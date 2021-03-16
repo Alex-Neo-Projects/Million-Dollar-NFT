@@ -54,10 +54,48 @@
 }
 
 .redeem-button{
-    width: 80px;
-    margin-top: 10px;
-    margin-left: auto; 
-    margin-right: 0;
+    width: 20px;
+    margin-top: 20px;
+    margin-left: 460px; 
+    margin-right: auto;
+}
+
+button{
+    outline: 0; 
+    font-size: 15px;
+    font-weight: 700;
+    color: #444;
+    background:#fff;
+    border: none;
+    padding: 1em 2em;
+    transition: all .3s ease-out; 
+    box-shadow: inset 0px -8px 0px 0px rgba(0,0,0,.2),
+      1px 1px 0 0 #7fcd85,
+      2px 2px 0 0 #7fcd85,
+      3px 3px 0 0 #7fcd85,
+      4px 4px 0 0 #7fcd85,
+      5px 5px 0 0 #7fcd85,
+      6px 6px 0 0 #7fcd85,
+      7px 7px 0 0 #7fcd85,
+      8px 8px 0 0 #7fcd85,
+      9px 9px 0 0 #7fcd85,
+      10px 10px 0 0 #7fcd85,
+      11px 11px 0 0 #7fcd85,
+      12px 12px 0 0 #7fcd85;
+}
+
+button:hover{
+    color:#7fcd85;
+}
+  
+button:active{
+    color:#7fcd85;
+    box-shadow:inset 0 -4px 0 0 rgba(0,0,0,.2),
+      1px 1px 0 0 #7fcd85,
+      2px 2px 0 0 #7fcd85,
+      3px 3px 0 0 #7fcd85,
+      4px 4px 0 0 #7fcd85,
+      5px 5px 0 0 #7fcd85;
 }
 
 /* Right Container */
