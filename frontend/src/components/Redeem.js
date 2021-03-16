@@ -127,7 +127,7 @@ function Redeem(){
         setDescription(event.target.value);
     }
 
-    // POST Firebase Storage  
+    // POST Firebase Storage. 
     const handleSubmits = (event) => {
         event.preventDefault();
 
