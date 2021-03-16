@@ -5,7 +5,6 @@ import info from '../images/homepage/info.png';
 import redeem from '../images/homepage/redeem.png';
 
 function Home() {
-
   return( 
     <div className="container">
       <div className="header-collection">

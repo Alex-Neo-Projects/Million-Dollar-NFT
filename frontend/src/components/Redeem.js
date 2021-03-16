@@ -1,5 +1,4 @@
-import {Card, CardContent, makeStyles, Typography} from '@material-ui/core';
-import {Button} from '@material-ui/core';
+import {Card, CardContent, makeStyles} from '@material-ui/core';
 import {TextField} from '@material-ui/core';
 import {useState, useEffect} from 'react';
 import {useDropzone} from 'react-dropzone';
@@ -11,6 +10,7 @@ import imageheader from '../images/redeempage/image.png';
 import titleheader from '../images/redeempage/title.png';
 import linkheader from '../images/redeempage/link.png';
 import descriptionheader from '../images/redeempage/description.png';
+import {firebaseStorageRef, firestoreRef} from './Firebase';
 import '../components/Redeem.css';
 
 // Dropzone Styling
@@ -89,13 +89,14 @@ function Redeem(){
 
     // Dropzone
     // accept all img type: use image/*
+    // accept only jpeg and png 
     const {
         getRootProps, 
         getInputProps, 
         isDragActive, 
         isDragAccept, 
         isDragReject
-    } = useDropzone({accept: 'image/jpeg, image/png', onDrop: (acceptedFiles) => {
+    } = useDropzone({accept: 'image/jpeg, image/png', multiple: false, onDrop: (acceptedFiles) => {
         setFiles(acceptedFiles.map(file => Object.assign(file, {
             preview: URL.createObjectURL(file)})));
         }
@@ -126,18 +127,36 @@ function Redeem(){
         setDescription(event.target.value);
     }
 
-    // POST 
+    // POST Firebase Storage  
     const handleSubmits = (event) => {
         event.preventDefault();
-        
-        // Add image to payload
-        const payload = {
-            'title': title, 
-            'link: ': link, 
-            'description: ': description
-        }
 
-        console.log(files);
+        const imgFile = files[0].file;
+
+        var uploadImage = firebaseStorageRef.ref().child('block_1').put(imgFile);
+
+        uploadImage.on('state_changed', (snapshot) => {
+            console.log('uploading');
+        }, (error) => {
+            console.log('error');
+        }, () => {
+            uploadImage.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                
+                const payload = {
+                    'title': title,
+                    'link': link, 
+                    'description': description, 
+                    'imgFile': downloadURL
+                }
+                
+                // Get boxNum when clicking on grid
+                const boxNum = 3;
+                firestoreRef.collection('boxData').doc('box_' + boxNum).set(payload).then(()=>{
+                    console.log("Added to firestore");
+                });
+                
+            });
+        });
     }
 
     return (
@@ -171,8 +190,7 @@ function Redeem(){
                                 </div>
                                 
                                 <div className="insert-textfield">
-                                    <Typography variant="fields">
-                                        <TextField 
+                                    <TextField 
                                         id="title" 
                                         // label="Title"
                                         fullWidth
@@ -183,7 +201,6 @@ function Redeem(){
                                         onInput={e=>setTitle(e.target.value)} 
                                         onChange={handleTitleChanges}
                                     />
-                                    </Typography>
                                 </div>
 
                                 <div className="insert-link">
@@ -223,7 +240,7 @@ function Redeem(){
                                 </div>
 
                                 <div className="redeem-button">
-                                    <Button type="submit"> Reedem </Button>
+                                    <button type="submit"> Reedem </button>
                                 </div>
                             </form>
                         </CardContent>
