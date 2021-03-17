@@ -17,5 +17,7 @@
     "ethers": "^5.0.32",
     "hardhat": "^2.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }

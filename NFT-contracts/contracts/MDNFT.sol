@@ -16,8 +16,4 @@ contract MDNFT is ERC721 {
 
     return newItemId; 
   }
-
-  function burnCollectible (uint256 tokenId) public returns (uint256) {
-    _burn(tokenId);
-  }
 }
