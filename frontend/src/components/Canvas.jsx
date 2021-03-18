@@ -6,14 +6,14 @@ function Canvas() {
 
   const drawBoard = context => {
     console.log('drawboard called');
-    for (var i = 0; i < 100; i++) {
-      context.moveTo(i*10, 0); 
-      context.lineTo(i*10, 1000); 
+    for (var x = 0; x < 100; x++) {
+      context.moveTo(x*10, 0); 
+      context.lineTo(x*10, 1000); 
     } 
 
-    for (var i = 0; i < 100; i++) {
-      context.moveTo(0, 10*i); 
-      context.lineTo(1000, 10*i); 
+    for (var y = 0; y < 100; y++) {
+      context.moveTo(0, 10*y); 
+      context.lineTo(1000, 10*y); 
     }
 
     context.strokeStyle = "black";
@@ -78,12 +78,12 @@ function Canvas() {
     })
   
     drawBoard(context)
-  }, [drawBoard])
+  }, [])
   
   return (
     <div>
-      <h1 style={{color: "white"}}>WORK IN PROGRESS - NFT COMING SOON</h1>
-      <h1 style={{color: "white"}}></h1>
+      <heading style={{color: "white" , fontSize:"30px"}}><b>WORK IN PROGRESS - NFT COMING SOON</b></heading>
+      <heading style={{color: "white"}}></heading>
       <p style={{color: "white"}}>(Grid will be replaced by user-generated images after launch)</p>
 
       <canvas ref={canvasRef} width='1000' height='1000' />
