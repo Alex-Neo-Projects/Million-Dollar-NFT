@@ -1,10 +1,13 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import '../App.css';
 
-function Canvas() {  
-  const canvasRef = useRef(null)
+class Canvas extends React.Component {  
+  constructor(props) {
+    super(props);
+    this.canvasRef = React.createRef();
+  }
 
-  const drawBoard = context => {
+  drawBoard(context) {
     console.log('drawboard called');
     for (var x = 0; x < 100; x++) {
       context.moveTo(x*10, 0); 
@@ -20,23 +23,20 @@ function Canvas() {
     context.stroke();
   }
   
-  useEffect(() => {
-    const canvas = canvasRef.current
+  componentDidMount() {
+    const canvas = this.refs.canvasRef
     const context = canvas.getContext('2d')
   
     // Fix to make lines *not* blurry
     context.translate(0.5, 0.5);
-    
-    // var img = new Image(10,10);   // Create new img element
-    // img.src = 'https://i.imgur.com/8dKz43K.png';
-    // img.style.height = "10px";
-    // img.style.width = "10px";
 
+    this.drawBoard(context);
     var background = new Image(); 
     background.src = 'https://raw.githubusercontent.com/BinaryMoon/MillionDollarHomepage/master/assets/image-map.png'; 
-    context.drawImage(background, 0, 0); 
-    // context.drawImage(img, (xBlock*10), yBlock*10);
-    drawBoard(context);
+    background.onload = () => {
+      context.drawImage(background, 0, 0); 
+      this.drawBoard(context);
+    }
 
     canvas.addEventListener('mousedown', function(e) {
       /* 
@@ -64,31 +64,28 @@ function Canvas() {
       else if (e.offsetY < 1000) {
         yBlock = parseInt(e.offsetY.toString().substr(0,2));
       }
-      
-      // alert("X: " + xBlock + " Y: " + yBlock + "X coord: " + e.offsetX + " Y coord: " + e.offsetY);
-      // context.drawImage(img, (xBlock*10), (yBlock*10))
+
       // Need to get block position on grid
       var blockPosition = (yBlock*100) + xBlock; 
-
-      context.drawImage(background, 0, 0); 
-      // context.drawImage(img, (xBlock*10), yBlock*10);
-      drawBoard(context);
+ 
       var url = 'https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/' + blockPosition;
       window.open(url, '_blank');
     })
   
-    drawBoard(context)
-  }, [])
+    this.drawBoard(context);
+  }
   
-  return (
-    <div>
-      <heading style={{color: "white" , fontSize:"30px"}}><b>WORK IN PROGRESS - NFT COMING SOON</b></heading>
-      <heading style={{color: "white"}}></heading>
-      <p style={{color: "white"}}>(Grid will be replaced by user-generated images after launch)</p>
-
-      <canvas ref={canvasRef} width='1000' height='1000' />
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <heading style={{color: "white" , fontSize:"30px"}}><b>WORK IN PROGRESS - NFT COMING SOON</b></heading>
+        <heading style={{color: "white"}}></heading>
+        <p style={{color: "white"}}>(Grid will be replaced by user-generated images after launch)</p>
+  
+        <canvas ref="canvasRef" width='1000' height='1000' />
+      </div>
+    );
+  }
 }
 
 export default Canvas
