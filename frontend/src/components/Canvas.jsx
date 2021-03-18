@@ -34,7 +34,10 @@ function Canvas() {
 
     var background = new Image(); 
     background.src = 'https://raw.githubusercontent.com/BinaryMoon/MillionDollarHomepage/master/assets/image-map.png'; 
-    
+    context.drawImage(background, 0, 0); 
+    // context.drawImage(img, (xBlock*10), yBlock*10);
+    drawBoard(context);
+
     canvas.addEventListener('mousedown', function(e) {
       /* 
         Explanation: 
@@ -70,8 +73,8 @@ function Canvas() {
       context.drawImage(background, 0, 0); 
       // context.drawImage(img, (xBlock*10), yBlock*10);
       drawBoard(context);
-      // var url = 'https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/' + blockPosition;
-      // window.open(url, '_blank');
+      var url = 'https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/' + blockPosition;
+      window.open(url, '_blank');
     })
   
     drawBoard(context)
@@ -79,6 +82,10 @@ function Canvas() {
   
   return (
     <div>
+      <h1 style={{color: "white"}}>WORK IN PROGRESS - NFT COMING SOON</h1>
+      <h1 style={{color: "white"}}></h1>
+      <p style={{color: "white"}}>(Grid will be replaced by user-generated images after launch)</p>
+
       <canvas ref={canvasRef} width='1000' height='1000' />
     </div>
   );
