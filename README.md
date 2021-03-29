@@ -9,5 +9,5 @@ This was a project created by Alex & Neo for an idea we called the "Million Doll
 
 We ended up not continuing the project for three reasons: 
  1) It was extremely cost prohibitive to mint 10k NFTs on Ethereum at the current gas prices (3/21/21)
- 2) We weren't able to figure out how to make Opensea's lazy minting while hosting metadataa with a decentralized network like Arweave or IPFS (all the examples on the opensea tutorials just showed how to do it with creating a centralized self hosted metadata server). 
+ 2) We weren't able to figure out how to make Opensea's lazy minting work while hosting metadata with a decentralized network like Arweave or IPFS (all the examples on the opensea tutorials just showed how to do it with creating a centralized self hosted metadata server. This defeats the purpose of an NFT). 
  3) It stopped being fun
