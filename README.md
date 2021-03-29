@@ -1,0 +1,12 @@
+# Million-Dollar-NFT
+
+The Million dollar NFT homepage! [unfinished, unmaintained]
+
+This was a project created by Alex & Neo for an idea we called the "Million Dollar NFT". We wanted to create something like [The Million Dollar Homepage](http://www.milliondollarhomepage.com/) where each 10x10 pixel block was represented as an NFT you could buy/sell/trade or redeem. The idea was you could redeem the NFT in order to place a 10x10 image on the million pixel grid. 
+
+![pic](https://i.imgur.com/4vzKXLc.png)
+
+We ended up not continuing the project for three reasons: 
+ 1) It was extremely cost prohibitive to mint 10k NFTs on Ethereum at the current gas prices (3/21/21)
+ 2) We weren't able to figure out how to make Opensea's lazy minting while hosting metadataa with a decentralized network like Arweave or IPFS (all the examples on the opensea tutorials just showed how to do it with creating a centralized self hosted metadata server). 
+ 3) It stopped being fun
